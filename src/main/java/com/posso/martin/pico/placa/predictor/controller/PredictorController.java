@@ -45,7 +45,7 @@ public class PredictorController {
             
             PredictionResult result = picoPlacaService.checkPicoPlaca(numPlate, date, time);
             
-            System.out.println(result.getMessage());
+            inputForm.showPredictionResult(!result.isIsCirculationAllowed(), result.getMessage());
             
         }catch(InvalidPlateException | InvalidDateException | InvalidTimeException e){
             System.err.println(e.getMessage());
