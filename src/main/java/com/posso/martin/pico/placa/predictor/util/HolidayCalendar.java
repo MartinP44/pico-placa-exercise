@@ -28,10 +28,14 @@ public class HolidayCalendar {
     
     private HolidayCalendar(){}
     
-    
+    /**
+     * Method to check if the a specific date is a holiday date
+     * 
+     * @param date a specific date with format dd/MM/yyyy
+     * @return It returns true if the Month and day of the date match with some of the FIXED_HOLIDAYS date
+     */
     public static boolean isHoliday(LocalDate date){
         return FIXED_HOLIDAYS.contains(MonthDay.from(date));
-        
     }
     
     
