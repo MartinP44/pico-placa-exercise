@@ -6,7 +6,7 @@ import com.posso.martin.pico.placa.predictor.util.HolidayCalendar;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -43,31 +43,16 @@ public class PicoPlacaServiceImpl implements PicoPlacaService{
     }
 
     private List<Integer> getRestrictedNumbers(DayOfWeek day) {
-        List<Integer> restrictedNums = new ArrayList<>();
-        switch(day){
-            case MONDAY -> {
-                restrictedNums.add(1);
-                restrictedNums.add(2);
-            }
-            case TUESDAY -> {
-                restrictedNums.add(3);
-                restrictedNums.add(4);
-            }
-            case WEDNESDAY -> {
-                restrictedNums.add(5);
-                restrictedNums.add(6);
-            }
-            case THURSDAY -> {
-                restrictedNums.add(7);
-                restrictedNums.add(8);
-            }
-            case FRIDAY -> {
-                restrictedNums.add(9);
-                restrictedNums.add(0);
-            }
-        }
+        return switch(day){
+            case MONDAY -> List.of(1,2);
+            case TUESDAY -> List.of(3,4);
+            case WEDNESDAY -> List.of(5,6);
+            case THURSDAY -> List.of(7,8);
+            case FRIDAY -> List.of(9,0);
+            default -> Collections.emptyList();
+        };
         
-        return restrictedNums;
+        
     }
 
     private boolean isRushHour(LocalTime time) {
