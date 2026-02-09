@@ -20,6 +20,16 @@ public class PicoPlacaServiceImpl implements PicoPlacaService{
     private static LocalTime AFTERNOON_START = LocalTime.of(16, 0);
     private static LocalTime AFTERNOON_END = LocalTime.of(20, 0);
     
+    
+    /**
+     * Method to check whether or not a car has "Pico y Placa" depending on the 
+     * plate, date and time;
+     * 
+     * @param plate number of a car plate
+     * @param date a specific date with format dd/MM/yyyy
+     * @param time an hour in 24-hour format
+     * @return It returns a PredictionResult object w
+     */
     @Override
     public PredictionResult checkPicoPlaca(String plate, LocalDate date, LocalTime time){
         
@@ -45,6 +55,12 @@ public class PicoPlacaServiceImpl implements PicoPlacaService{
         
     }
 
+    /**
+     * Method to get the restricted numbers according to the day
+     * 
+     * @param day a day of the week
+     * @return It returns a list of integers that represent the restricted numbers depending on the day. The list will be empty if it is a weekend day.
+     */
     private List<Integer> getRestrictedNumbers(DayOfWeek day) {
         return switch(day){
             case MONDAY -> List.of(1,2);
@@ -58,6 +74,12 @@ public class PicoPlacaServiceImpl implements PicoPlacaService{
         
     }
 
+    /**
+     * Method to know if the time is a rush hour
+     * 
+     * @param time an hour in 24-hour format
+     * @return It returns true if the time evaluated is between MORNING_START-MORNING_END or AFTERNOON_START-AFTERNOON_END ranges. Otherwise it returns false
+     */
     private boolean isRushHour(LocalTime time) {
         boolean isMorningRush = !time.isBefore(MORNING_START) && !time.isAfter(MORNING_END);
         boolean isNoonRush = !time.isBefore(AFTERNOON_START) && !time.isAfter(AFTERNOON_END);
