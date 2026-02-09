@@ -1,6 +1,7 @@
 package com.posso.martin.pico.placa.predictor.view;
 
 import com.posso.martin.pico.placa.predictor.controller.PredictorController;
+import com.posso.martin.pico.placa.predictor.service.impl.ImplPicoPlacaService;
 
 /**
  *
@@ -16,6 +17,9 @@ public class JFInputForm extends javax.swing.JFrame {
      */
     public JFInputForm() {
         initComponents();
+        
+        ImplPicoPlacaService service = new ImplPicoPlacaService();
+        predictorController = new PredictorController(service, this);
     }
 
     /**
@@ -116,7 +120,7 @@ public class JFInputForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckActionPerformed
-        // TODO add your handling code here:
+        predictorController.makePrediction();
     }//GEN-LAST:event_btnCheckActionPerformed
 
     /**
