@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author Martin Posso
  */
-public class ImplPicoPlacaService implements PicoPlacaService{
+public class PicoPlacaServiceImpl implements PicoPlacaService{
     
     @Override
     public PredictionResult checkPicoPlaca(String plate, LocalDate date, LocalTime time){

@@ -5,7 +5,7 @@ import com.posso.martin.pico.placa.predictor.exception.InvalidTimeException;
 import com.posso.martin.pico.placa.predictor.exception.InvalidDateException;
 import com.posso.martin.pico.placa.predictor.model.Plate;
 import com.posso.martin.pico.placa.predictor.model.PredictionResult;
-import com.posso.martin.pico.placa.predictor.service.impl.ImplPicoPlacaService;
+import com.posso.martin.pico.placa.predictor.service.impl.PicoPlacaServiceImpl;
 import com.posso.martin.pico.placa.predictor.util.DateTimeUtil;
 import com.posso.martin.pico.placa.predictor.util.FormatValidatorUtil;
 import com.posso.martin.pico.placa.predictor.view.JFInputForm;
@@ -19,10 +19,10 @@ import java.time.LocalTime;
  */
 public class PredictorController {
 
-    private ImplPicoPlacaService picoPlacaService;
+    private PicoPlacaServiceImpl picoPlacaService;
     private JFInputForm inputForm;
     
-    public PredictorController(ImplPicoPlacaService picoPlacaService, JFInputForm inputForm) {
+    public PredictorController(PicoPlacaServiceImpl picoPlacaService, JFInputForm inputForm) {
         this.picoPlacaService = picoPlacaService;
         this.inputForm = inputForm;
         

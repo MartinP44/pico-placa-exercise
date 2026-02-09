@@ -1,7 +1,7 @@
 package com.posso.martin.pico.placa.predictor.view;
 
 import com.posso.martin.pico.placa.predictor.controller.PredictorController;
-import com.posso.martin.pico.placa.predictor.service.impl.ImplPicoPlacaService;
+import com.posso.martin.pico.placa.predictor.service.impl.PicoPlacaServiceImpl;
 
 /**
  *
@@ -18,7 +18,7 @@ public class JFInputForm extends javax.swing.JFrame {
     public JFInputForm() {
         initComponents();
         
-        ImplPicoPlacaService service = new ImplPicoPlacaService();
+        PicoPlacaServiceImpl service = new PicoPlacaServiceImpl();
         predictorController = new PredictorController(service, this);
     }
 
