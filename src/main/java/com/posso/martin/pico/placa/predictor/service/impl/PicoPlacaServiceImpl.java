@@ -17,6 +17,11 @@ import java.util.List;
  */
 public class PicoPlacaServiceImpl implements PicoPlacaService{
     
+    private static LocalTime MORNING_START = LocalTime.of(6, 0);
+    private static LocalTime MORNING_END = LocalTime.of(9, 30);
+    private static LocalTime AFTERNOON_START = LocalTime.of(16, 0);
+    private static LocalTime AFTERNOON_END = LocalTime.of(20, 0);
+    
     @Override
     public PredictionResult checkPicoPlaca(String plate, LocalDate date, LocalTime time){
         
@@ -56,13 +61,8 @@ public class PicoPlacaServiceImpl implements PicoPlacaService{
     }
 
     private boolean isRushHour(LocalTime time) {
-        LocalTime morningStart = LocalTime.of(6, 0);
-        LocalTime morningEnd = LocalTime.of(9, 30);
-        LocalTime noonStart = LocalTime.of(16, 0);
-        LocalTime noonEnd = LocalTime.of(20, 0);
-        
-        boolean isMorningRush = time.isAfter(morningStart) && time.isBefore(morningEnd);
-        boolean isNoonRush = time.isAfter(noonStart) && time.isBefore(noonEnd);
+        boolean isMorningRush = time.isAfter(MORNING_START) && time.isBefore(MORNING_END);
+        boolean isNoonRush = time.isAfter(AFTERNOON_START) && time.isBefore(AFTERNOON_END);
         
         return isMorningRush || isNoonRush;
     }
