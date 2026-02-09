@@ -18,10 +18,10 @@ This program allows the user to determine if a vehicle has “Pico y Placa” by
 
 ## Table of Content
 
-- [Technologies](https://github.com/MartinP44/pico-placa-exercise/new/main?filename=README.md#technologies-technologies)
-- [Project Structure](https://github.com/MartinP44/pico-placa-exercise/new/main?filename=README.md#project-structure)
-- [Usage](https://github.com/MartinP44/pico-placa-exercise/new/main?filename=README.md#usage)
-- [Tests](https://github.com/MartinP44/pico-placa-exercise/new/main?filename=README.md#tests)
+- [Technologies](https://github.com/MartinP44/pico-placa-exercise#technologies)
+- [Project Structure](https://github.com/MartinP44/pico-placa-exercise#project-structure)
+- [Usage](https://github.com/MartinP44/pico-placa-exercise#usage)
+- [Tests](https://github.com/MartinP44/pico-placa-exercise#tests)
 
 ## Technologies
 
