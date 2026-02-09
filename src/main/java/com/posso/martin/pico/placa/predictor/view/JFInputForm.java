@@ -2,6 +2,7 @@ package com.posso.martin.pico.placa.predictor.view;
 
 import com.posso.martin.pico.placa.predictor.controller.PredictorController;
 import com.posso.martin.pico.placa.predictor.service.impl.PicoPlacaServiceImpl;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -168,6 +169,22 @@ public class JFInputForm extends javax.swing.JFrame {
     
     public String getTime(){
         return txtTime.getText();
+    }
+    
+    public void showPredictionResult(boolean canCirculate, String message){
+        String title;
+        int messageType;
+        
+        if(canCirculate){
+            title = "Free Circulation";
+            messageType = JOptionPane.INFORMATION_MESSAGE;
+            
+        }else{
+            title = "Restricted Circulation";
+            messageType = JOptionPane.WARNING_MESSAGE;
+        }
+        
+        JOptionPane.showMessageDialog(this, message, title, messageType);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
