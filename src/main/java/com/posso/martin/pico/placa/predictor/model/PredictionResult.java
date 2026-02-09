@@ -14,6 +14,12 @@ public class PredictionResult {
         this.isCirculationAllowed = isCirculationAllowed;
         this.message = message;
     }
-    
-    
+
+    public boolean isIsCirculationAllowed() {
+        return isCirculationAllowed;
+    }
+
+    public String getMessage() {
+        return message;
+    }
 }
