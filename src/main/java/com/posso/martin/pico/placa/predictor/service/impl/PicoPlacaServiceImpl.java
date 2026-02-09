@@ -9,8 +9,6 @@ import java.time.LocalTime;
 import java.util.Collections;
 import java.util.List;
 
-
-
 /**
  *
  * @author Martin Posso
@@ -61,8 +59,8 @@ public class PicoPlacaServiceImpl implements PicoPlacaService{
     }
 
     private boolean isRushHour(LocalTime time) {
-        boolean isMorningRush = time.isAfter(MORNING_START) && time.isBefore(MORNING_END);
-        boolean isNoonRush = time.isAfter(AFTERNOON_START) && time.isBefore(AFTERNOON_END);
+        boolean isMorningRush = !time.isBefore(MORNING_START) && !time.isAfter(MORNING_END);
+        boolean isNoonRush = !time.isBefore(AFTERNOON_START) && !time.isAfter(AFTERNOON_END);
         
         return isMorningRush || isNoonRush;
     }
