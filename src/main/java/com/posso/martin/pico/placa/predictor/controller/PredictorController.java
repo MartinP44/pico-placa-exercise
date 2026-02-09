@@ -28,6 +28,9 @@ public class PredictorController {
         
     }
     
+    /**
+     * Method that shows the result of the prediction regarding to "Pico y Placa"
+     */
     public void makePrediction(){
         Plate plate = new Plate(inputForm.getPlate());
         String dateS = inputForm.getDate();
